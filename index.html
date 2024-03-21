@@ -12,6 +12,7 @@
         <span>lng:</span> <span id="longis"></span>
         <span>speed:</span> <span id="speedis"></span>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
     <script>
         let id;
 let target = {
@@ -49,6 +50,18 @@ options = {
   timeout: 5000,
   maximumAge: 0,
 };
+
+
+document.addEventListener("DOMContentLoaded",async()=>{
+  
+ axios.get("https://geocode.maps.co/reverse?lat=24.90368&lon=67.0957568&api_key=65fa81fc79c33825484020zinf8a1d4")
+ .then((res)=>{
+  console.log(res.data.display_name)
+ })
+ .catch((err)=>{
+  console.log(err)
+ })
+})
     </script>
 </body>
 </html>
